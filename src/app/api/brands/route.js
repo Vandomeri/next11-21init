@@ -11,14 +11,19 @@ export function GET() {
         }
     ]
 
-
-
     return Response.json(productsFromDb)
 
 }
 
-export function POST() {
+export async function POST(request) {
 
+    const body = await request.json()
 
+    // Какая-то логика добавления бренда в БД
+
+    return Response.json({
+        status: 'success',
+        message: `Бренд - ${body.title} добавлен`
+    })
 
 }

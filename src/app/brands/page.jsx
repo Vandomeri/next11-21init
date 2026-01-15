@@ -28,9 +28,12 @@ export default function BrandsPage() {
 
         const resp = await fetch('/api/brands', {
             method: 'post',
-            body: {
-                title: title
-            }
+            body: JSON.stringify(
+                {
+                    title: title
+                }
+            )
+
         })
 
         const data = await resp.json()
