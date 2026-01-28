@@ -14,8 +14,6 @@ export default async function ProductsPage() {
 
 
 
-
-
             <ProductCards Products={products} />
 
 

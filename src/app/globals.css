@@ -1,1 +1,11 @@
 @import "tailwindcss";
+
+@layer utilities {
+
+    table,
+    td,
+    th {
+        border: 1px solid black;
+    }
+
+}

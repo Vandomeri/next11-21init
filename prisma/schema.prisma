@@ -16,3 +16,39 @@ model Product {
   price       Int
   description String
 }
+
+model Car {
+  id    Int    @id @default(autoincrement())
+  marka String
+  model String
+  year  Int
+  color String
+  hp    Int
+
+  images CarImage[]
+}
+
+model CarImage {
+  id    Int    @id @default(autoincrement())
+  url   String
+  car   Car?   @relation(fields: [carId], references: [id])
+  carId Int?
+}
+
+model Author {
+  id       Int    @id @default(autoincrement())
+  email    String
+  password String
+  username String
+
+  posts Post[]
+}
+
+model Post {
+  id Int @id @default(autoincrement())
+
+  title    String
+  content  String
+  author   Author? @relation(fields: [authorId], references: [id])
+  authorId Int?
+}
