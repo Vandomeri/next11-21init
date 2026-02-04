@@ -37,9 +37,11 @@ model CarImage {
 
 model Author {
   id       Int    @id @default(autoincrement())
-  email    String
+  email    String @unique
   password String
-  username String
+  username String @unique
+
+  role String @default("AUTHOR")
 
   posts Post[]
 }
